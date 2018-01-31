@@ -1,0 +1,16 @@
+<div class="forms">
+  <h3 class="forms__title">Forms</h3>
+
+  <div class="forms__items items">
+    <div class="form__item items__item" *ngFor="let item of items; let i = index">
+      <app-form-card [formDescription]="item.description"
+                     [formName]="item.name"
+                     [formImg]="item.image"
+                     (deleteHandler)="removeItem(i)"
+                     (viewHandler)="navigateToView(item.id)">
+      </app-form-card>
+    </div>
+  </div>
+</div>
+
+

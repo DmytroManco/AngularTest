@@ -1,0 +1,67 @@
+<div class="form">
+  <h1 class="form__title title">Form {{formId}}</h1>
+
+  <div class="form__info info">
+
+    <div class="info__text">
+      <div class="form__name info__name"> <b>Form Name: </b>{{formInfo?.name}}</div>
+      <p class="form__desc info__desc"><b>Form Description: </b><i>{{formInfo?.description}}</i></p>
+    </div>
+
+    <img src="{{formInfo?.image}}" alt="Form Image" class="form__img info__img">
+  </div>
+
+  <form class="form__form" [formGroup]="form">
+    <div class="form__items items" *ngFor="let item of formView; let i = index">
+      <div class="items__container" [ngSwitch]="item.type">
+
+        <app-form-string *ngSwitchCase="'string'"
+                         [parentForm]="form"
+                         [formGroupName]="i"
+                         [formValue]="item.value"
+                         [formType]="item.type"
+                         [formLabel]="item.label">
+        </app-form-string>
+
+        <app-form-string *ngSwitchCase="'text'"
+                         [parentForm]="form"
+                         [formGroupName]="i"
+                         [formValue]="item.value"
+                         [formType]="item.type"
+                         [formLabel]="item.label">
+        </app-form-string>
+
+        <app-form-integer *ngSwitchCase="'integer'"
+                          [parentForm]="form"
+                          [formGroupName]="i"
+                          [formValue]="item.value"
+                          [formLabel]="item.label">
+        </app-form-integer>
+
+        <app-form-integer *ngSwitchCase="'double'"
+                          [parentForm]="form"
+                          [formGroupName]="i"
+                          [formValue]="item.value"
+                          [formLabel]="item.label">
+        </app-form-integer>
+
+        <app-from-list *ngSwitchCase="'list'"
+                       [parentForm]="form"
+                       [formGroupName]="''+ i"
+                       [formValue]="item.values"
+                       [formLabel]="item.label">
+        </app-from-list>
+
+        <app-form-bool *ngSwitchCase="'bool'"
+                       [parentForm]="form"
+                       [formGroupName]="''+ i"
+                       [formValue]="item.value"
+                       [formLabel]="item.label">
+        </app-form-bool>
+      </div>
+    </div>
+  </form>
+
+</div>
+
+

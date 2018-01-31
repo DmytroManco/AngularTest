@@ -1,0 +1,10 @@
+<div class="form-card">
+  <img src="{{formImg}}" alt="{{imgAlt}}" class="form-card__img">
+  <div class="form-card__title title">{{formName}}</div>
+  <div class="form-card__desc desc">{{formDescription}}</div>
+
+  <div class="form-card__buttons buttons">
+    <app-button (onclickHandler)="onDeleteHandler($event)">Delete</app-button>
+    <app-button (onclickHandler)="onViewHandler($event)">View</app-button>
+  </div>
+</div>

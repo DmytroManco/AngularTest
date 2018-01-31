@@ -1,0 +1,13 @@
+<div [formGroup]="parentForm">
+  <h4 class="form-label">{{formLabel}}</h4>
+  <div [formArrayName]="formGroupName">
+    <div class="option" *ngFor="let item of parentForm.get(formGroupName)['controls']; let i = index">
+      <div class="form-group" [formGroupName]="i">
+        <input type="checkbox" formControlName="correct">
+        <input type="text" formControlName="string" class="form-input">
+      </div>
+    </div>
+  </div>
+</div>
+
+

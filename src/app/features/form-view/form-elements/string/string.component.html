@@ -1,0 +1,14 @@
+<div [formGroup]="parentForm">
+  <h4 class="form-label">{{formLabel}}</h4>
+  <label [formGroupName]="formGroupName">
+    <input type="text" class="form-input"
+           formControlName="string"
+           *ngIf="formType === 'string'">
+    <textarea class="form-textarea" wrap="soft"
+              *ngIf="formType === 'text'"
+              formControlName="string">
+    </textarea>
+  </label>
+</div>
+
+

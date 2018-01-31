@@ -1,0 +1,43 @@
+.form {
+  margin: 15px 14em;
+  border: 1px solid transparent;
+
+  &__title {
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  &__info {
+    display: flex;
+    flex-flow: row nowrap;
+  }
+
+  &__img {
+    width: 300px;
+    height: 200px;
+    margin: 0 0 0 auto;
+    padding: 0 0 0 15px;
+  }
+
+  .form-input, .form-textarea {
+    width: 30em;
+    padding: 5px;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .form-textarea {
+    min-height: 100px;
+  }
+
+  .form-group {
+    input {
+      margin: 5px;
+    }
+
+    .form-input {
+      width: 27.6em;
+    }
+  }
+}
